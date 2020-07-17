@@ -21,7 +21,7 @@ Para solucionarlo creamos esta imagen que solo instala lo estrictamente necesari
 
 ## Construcción
 
-Para la construcción de la imagen
+Para la construcción de la imagen y subida al repositorio Github [jmmirand/nexus3-kube-pi](https://hub.docker.com/repository/docker/jmmirand/nexus3-kube-pi)
 
 ```
 docker build --tag jmmirand/nexus3-kube-pi:3.25.0 .
