@@ -19,11 +19,11 @@ standard_init_linux.go:211: exec user process caused "exec format error"
 
 Para solucionarlo creamos esta imagen que solo instala lo estrictamente necesario y seguimos las instrucciones de instalación
 
-## Construcción
+## Construcción
 
 Para la construcción de la imagen y subida al repositorio Github [jmmirand/nexus3-kube-pi](https://hub.docker.com/repository/docker/jmmirand/nexus3-kube-pi)
 
-```
+``` bash
 docker build --tag jmmirand/nexus3-kube-pi:3.25.0 .
 
 docker push jmmirand/nexus3-kube-pi:3.25.0
