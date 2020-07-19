@@ -23,9 +23,8 @@ ENV NEXUS3_HOME=${SONATYPE_DIR}/nexus \
     SONATYPE_WORK=${SONATYPE_DIR}/sonatype-work \
     DOCKER_TYPE='rh-docker'
 
-COPY start-nexus.sh ${NEXUS3_HOME}/${NEXUS3_VERSION}/start-nexus.sh
+COPY ./files/start-nexus.sh ${NEXUS3_HOME}/${NEXUS3_VERSION}/start-nexus.sh
 RUN chmod +x ${NEXUS3_HOME}/${NEXUS3_VERSION}/start-nexus.sh
-
 
 RUN yum install java wget -y; \
     java -version; \
@@ -34,6 +33,12 @@ RUN yum install java wget -y; \
     gunzip  ${NEXUS3_HOME}/donwload/${NEXUS3_VERSION}-unix.tar.gz; \
     tar xvf ${NEXUS3_HOME}/donwload/${NEXUS3_VERSION}-unix.tar --directory  ${NEXUS3_HOME}; \
     rm -rf ${NEXUS3_HOME}/donwload
+
+# Actualizamos las opciones.
+COPY ./files/nexus.vmoptions ${NEXUS3_HOME}/${NEXUS3_VERSION}/bin/nexus.vmoptions
+COPY ./files/nexus-default.properties ${NEXUS3_HOME}/${NEXUS3_VERSION}/etc/nexus-default.properties
+
+
 
 EXPOSE 8081
 CMD ${NEXUS3_HOME}/${NEXUS3_VERSION}/start-nexus.sh
