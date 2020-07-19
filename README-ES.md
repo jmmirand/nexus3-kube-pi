@@ -1,5 +1,3 @@
-
-
 # Nexus3  para Raspberry PI
 
 La imagen oficial de Nexus3 cuando la intentamos ejecutar en una Raspberry PI 4 Modelo B nos da un error
@@ -29,7 +27,7 @@ Conclusión para solucionarlo, creamos esta imagen instalando estrictamente nece
  * Directorio de Datos /nexus-data
 
 
-## Construcción
+## Construcción
 
 Para la construcción de la imagen y subida al repositorio Github [jmmirand/nexus3-kube-pi](https://hub.docker.com/repository/docker/jmmirand/nexus3-kube-pi)
 
@@ -55,7 +53,7 @@ docker run  -p 8081:8081 -v $(PWD)/nexus-data:/nexus-data jmmirand/nexus3-kube-p
 ```
 
 
-# Ejecución en Kubernete
+## Ejecución en Kubernete
 
 Para ejecuta nexus desde un cluster Kubernetes ejecutamos
 
